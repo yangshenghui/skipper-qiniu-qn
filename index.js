@@ -55,10 +55,10 @@ module.exports = function SkipperQiniu(globalOptions) {
         key: options.key || newFile.fd
       }, function (err, result) {
         if (err){
-            next(err);
+            return next(err);
         }
 
-        next(undefined, result);
+        return next(undefined, result);
       });
     }
     return receiver;
